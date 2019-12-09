@@ -7,10 +7,11 @@
   flexLayoutGap="10px"
   flexLayoutGap.xs="10px"
 >
-  <div fxFlex>
-    <mat-card>
+  <div fxFlex="40">
+    <mat-card *ngIf="dish">
       <mat-card-header>
         <mat-card-title>
+          
           <h3>{{ dish.name | uppercase }}</h3>
         </mat-card-title>
       </mat-card-header>
@@ -31,14 +32,12 @@
 
   <div fxFlex="40">
     <h3> Comments</h3>
-    <!-- {{ dish.comments[0].comment}} -->
     <div *ngFor="let comment of dish.comments">
-      <!-- {{ dish.comments[0].comment}} -->
       {{comment.comment}}
       <br>
       {{comment.rating}} stars
       <br>
-      {{comment.author}} {{comment.date}}
+      -- {{comment.author}} {{comment.date}}
       <br>
       <br>
   </div>
