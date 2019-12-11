@@ -9,7 +9,7 @@ import {Dish} from '../shared/dish'
 })
 export class MenuComponent implements OnInit {
   dishes: Dish[];
-DishService
+// DishService
   selectedDish: Dish;
 
 
