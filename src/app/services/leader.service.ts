@@ -6,21 +6,24 @@ import { LEADERS } from '../shared/leaders'
   providedIn: 'root'
 })
 export class LeaderService {
-
   constructor() { }
 
   getLeaders(): Leader[] {
     return LEADERS
   }
 
-  // getFeaturedLeader(): Leader {
-    // return LEADERS.filter((lead) => lead.featured[0])
-  // }
+  getFeaturedLeader(): any  {
+    console.log("H")
+    return LEADERS.filter((feature) => feature.featured)[0]
+    
+  }
 
   // getFeaturedPromotion(): Promotion {
   //   return PROMOTIONS.filter((promo) => promo.featured)[0]
 
   // }
+
+
 
 }
 
