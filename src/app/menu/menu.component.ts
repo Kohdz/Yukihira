@@ -24,7 +24,9 @@ export class MenuComponent implements OnInit {
   // this lifecycle method is run whenever this component is instantated
   // you can aks this method to get is information from our dishService
   ngOnInit() {
-    this.dishes = this.dishService.getDishes()
+    this.dishService.getDishes()
+      .then((dishes) => this.dishes = dishes)
+    // this.dishes = this.dishService.getDishes()
   }
 
 

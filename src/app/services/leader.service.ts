@@ -8,22 +8,16 @@ import { LEADERS } from '../shared/leaders'
 export class LeaderService {
   constructor() { }
 
-  getLeaders(): Leader[] {
-    return LEADERS
+  getLeaders(): Promise<Leader[]> {
+    return Promise.resolve(LEADERS)
   }
 
-  getFeaturedLeader(): any  {
+  getFeaturedLeader(): Promise<any> {
     console.log("H")
-    return LEADERS.filter((feature) => feature.featured)[0]
-    
+    return new Promise (resolve => {
+      // simulate server latency with 2 second delay
+      setTimeout(() => resolve((LEADERS.filter((feature) => (feature.featured)[0]), 2000)));
+    })
   }
-
-  // getFeaturedPromotion(): Promotion {
-  //   return PROMOTIONS.filter((promo) => promo.featured)[0]
-
-  // }
-
-
-
 }
 
