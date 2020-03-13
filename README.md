@@ -1,5 +1,5 @@
-# Confusion
-Confusion is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application for a restaurant called confusion available dishes that the user can favorite and comment on. The application is built on the [MEAN Stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) of technologies and using RESTful web services architecture.
+# Yukihira
+Yukihira is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application for a restaurant called Yukihira available dishes that the user can favorite and comment on. The application is built on the [MEAN Stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) of technologies and using RESTful web services architecture.
 
 The application was built using [Node.js](https://nodejs.org/en/) runtime. It used [MongoDB](https://www.mongodb.com/) as the underlying database system. It uses [Express](https://expressjs.com/) framework and [Mongoose ODM](http://mongoosejs.com/) toolkit. And in the front-end side, it uses [AngularJS](https://angularjs.org/) to make it [SPA](https://en.wikipedia.org/wiki/Single-page_application) and [Bootstrap](http://getbootstrap.com/) framework.
 
@@ -36,7 +36,7 @@ You have to install the following to be able to run and test the application:
 3. Create a new folder with the name ```data``` anywhere in your machine and run:
     ```bash
     mongod --dbpath=data
-    use conFusion
+    use Yukihira
     ```
 4. Run the application and go to [localhost:3443](http://127.0.0.1:3443/) to see the application running.
     ```bash
