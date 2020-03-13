@@ -4,7 +4,7 @@ import { Dish } from "../shared/dish";
 const DISHES: Dish[] = [
   {
     id: "0",
-    name: "Uthappizza",
+    name: "Burger",
     image: "/assets/images/burger.png",
     category: "mains",
     featured: true,
@@ -16,7 +16,7 @@ const DISHES: Dish[] = [
   },
   {
     id: "1",
-    name: "Zucchipakoda",
+    name: "Ramen",
     image: "/assets/images/ramen.png",
     category: "appetizer",
     featured: false,
@@ -27,7 +27,7 @@ const DISHES: Dish[] = [
   },
   {
     id: "2",
-    name: "Vadonut",
+    name: "Lemon Curd",
     image: "/assets/images/lemon-curd.png",
     category: "appetizer",
     featured: false,
@@ -38,7 +38,7 @@ const DISHES: Dish[] = [
   },
   {
     id: "3",
-    name: "ElaiCheese Cake",
+    name: "Beef Roit",
     image: "/assets/images/beef-roti.png",
     category: "dessert",
     featured: false,
