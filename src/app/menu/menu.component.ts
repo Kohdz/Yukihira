@@ -34,7 +34,7 @@ const DISHES: Dish[] = [
     label: "New",
     price: "1.99",
     description:
-      "A quintessential ConFusion experience, is it a vada or is it a donut?"
+      "A quintessential Yukihira experience, is it a vada or is it a donut?"
   },
   {
     id: "3",
