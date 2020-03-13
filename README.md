@@ -1,11 +1,13 @@
 # Confusion
-Confusion is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application for a restaurant called confusion available dishes that the user can favorite and comment on. The application is built on the [MEAN Stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)) of technologies and using RESTful web services architecture.
+
+Confusion is a single-page [AngularJS](https://angularjs.org/)/[Node.js](https://nodejs.org/en/) web application for a restaurant called confusion available dishes that the user can favorite and comment on. The application is built on the [MEAN Stack](<https://en.wikipedia.org/wiki/MEAN_(software_bundle)>) of technologies and using RESTful web services architecture.
 
 The application was built using [Node.js](https://nodejs.org/en/) runtime. It used [MongoDB](https://www.mongodb.com/) as the underlying database system. It uses [Express](https://expressjs.com/) framework and [Mongoose ODM](http://mongoosejs.com/) toolkit. And in the front-end side, it uses [AngularJS](https://angularjs.org/) to make it [SPA](https://en.wikipedia.org/wiki/Single-page_application) and [Bootstrap](http://getbootstrap.com/) framework.
 
 This is my project for the [Coursera's Full Stack Web Development Specialization](https://www.coursera.org/specializations/full-stack-mobile-app-development) created by [Hong Kong University of Science and Technology](http://www.ust.hk/).
 
 ### Features:
+
 - [Single page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application).
 - HTTPS secure communication.
 - User registration system.
@@ -18,33 +20,37 @@ This is my project for the [Coursera's Full Stack Web Development Specialization
 - Elegant and responsive UI.
 
 ### Prerequisites:
+
 You have to install the following to be able to run and test the application:
+
 - [Node.js](https://nodejs.org/en/).
 - [npm](https://www.npmjs.com/).
 - [MongoDB](https://www.mongodb.com/).
 - [bower](https://bower.io/).
 
 ### Usage:
+
 1. Clone this repository to your desktop, go to its root directory and run:
-    ```bash
-    npm install
-    ```
-2. Go to the ```public``` folder and run:
-    ```bash
-    bower install
-    ```
-3. Create a new folder with the name ```data``` anywhere in your machine and run:
-    ```bash
-    mongod --dbpath=data
-    use conFusion
-    ```
+   ```bash
+   npm install
+   ```
+2. Go to the `public` folder and run:
+   ```bash
+   bower install
+   ```
+3. Create a new folder with the name `data` anywhere in your machine and run:
+   ```bash
+   mongod --dbpath=data
+   use conFusion
+   ```
 4. Run the application and go to [localhost:3443](http://127.0.0.1:3443/) to see the application running.
-    ```bash
-    npm start
-    ```
-5. If you want to populate the database with some dummy data go to the ```db``` folder.
+   ```bash
+   npm start
+   ```
+5. If you want to populate the database with some dummy data go to the `db` folder.
 
 ### Technologies Used:
+
 - [Node.js](https://nodejs.org/en/): Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 - [AngularJS](https://angularjs.org/): AngularJS is a JavaScript-based open-source front-end web application framework.
 - [Express](https://expressjs.com/): Fast, unopinionated, minimalist web framework for Node.js.
@@ -55,4 +61,13 @@ You have to install the following to be able to run and test the application:
 - [Bootstrap 3](http://getbootstrap.com/): Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
 
 ### License:
+
 This software is licensed under the [Modified BSD License](https://opensource.org/licenses/BSD-3-Clause).
+
+<!--  ng serve --host 192.168.1.15-->
+
+<!--
+
+
+Uses Model View Controller Paradime
+ -->
