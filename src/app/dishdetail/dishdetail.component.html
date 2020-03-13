@@ -1,18 +1,14 @@
 <div class="featured-card-container">
-  <mat-card *ngIf="selectedDish" class="example-card">
+  <mat-card *ngIf="dish" class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{ selectedDish.name | uppercase }}</mat-card-title>
+      <mat-card-title>{{ dish.name | uppercase }}</mat-card-title>
       <!-- <mat-card-subtitle>FoodType</mat-card-subtitle> -->
     </mat-card-header>
-    <img
-      mat-card-image
-      src="{{ selectedDish.image }}"
-      alt="{{ selectedDish.name }}"
-    />
+    <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
     <mat-card-content>
       <p>
-        {{ selectedDish.description }}
+        {{ dish.description }}
       </p>
     </mat-card-content>
     <mat-card-actions>
@@ -22,7 +18,7 @@
   </mat-card>
 
   <!-- <div fxFlex *ngIf="selectedDish"> -->
-  <div class="comments" *ngIf="selectedDish">
+  <div class="comments" *ngIf="dish">
     <mat-card>
       <mat-card-header>
         <mat-card-title>
@@ -33,7 +29,7 @@
       <!-- mat-grid-tile *ngFor="let dish of dishes"> -->
       <!-- let dish of dishes -->
       <!-- {{ selectedDish.comments[0].rating }} -->
-      <mat-card-content *ngFor="let comment of selectedDish.comments">
+      <mat-card-content *ngFor="let comment of dish.comments">
         <p>
           {{ comment.rating }} Stars! {{ comment.comment }} - " "{{
             comment.author
