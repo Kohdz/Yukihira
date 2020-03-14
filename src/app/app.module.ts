@@ -55,7 +55,8 @@ import { MatDialogModule } from "@angular/material";
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [DishService, PromotionService, LeadersService],
   entryComponents: [LoginComponent],
