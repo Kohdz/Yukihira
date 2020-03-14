@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { DISHES } from "../shared/dishes";
+import { Dish } from "../shared/dish";
 
 @Component({
   selector: "app-header",
@@ -11,4 +13,12 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getDish(id: string): Dish {
+    return DISHES.filter(dish => dish.id === id)[0];
+  }
+
+  getFeaturedDish(): Dish {
+    return DISHES.filter(dish => dish.featured)[0];
+  }
 }

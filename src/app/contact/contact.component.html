@@ -1,1 +1,38 @@
-<p>contact works!</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+  <div fxFlex>
+    <div>
+      <h3>Contact Us</h3>
+      <hr />
+    </div>
+  </div>
+
+  <div fxFlex>
+    <h3>Location Information</h3>
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="50" fxFlexOffset="20px">
+        <h4>Our Address</h4>
+        <address>
+          2-1-1 Nihonbashi Muromachi<br />
+          Mandarin Oriental Tokyo<br />
+          Tokyo Prefecture<br />
+          <i class="fa fa-phone"></i>: +81-9057986974<br />
+          <i class="fa fa-envelope"></i>:
+          <a href="mailto:Yukihira@food.net">Yukihira@food.net</a>
+        </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="tel:+85212345678"
+            ><i class="fa fa-phone"></i> Call</a
+          >
+          <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+          <a mat-raised-button href="mailto:confusion@food.net"
+            ><i class="fa fa-envelope-o"></i> Email</a
+          >
+        </div>
+      </div>
+      <div fxFlex="40">
+        <h4>Map of our Location</h4>
+      </div>
+    </div>
+  </div>
+</div>

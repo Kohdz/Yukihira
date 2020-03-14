@@ -2,6 +2,7 @@ $lt-gray: #ddd;
 $background-dark: #512da8;
 $background-light: rgb(255, 102, 0);
 $background-pale: #d1c4e9;
+$background-moredark: #4527a0;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
   margin: 0px auto;
@@ -25,4 +26,8 @@ $background-pale: #d1c4e9;
 .mat-toolbar {
   background-color: rgb(255, 102, 0);
   color: white;
+}
+
+.active {
+  background: $background-moredark;
 }
