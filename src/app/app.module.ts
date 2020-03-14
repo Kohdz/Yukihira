@@ -23,6 +23,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { PromotionService } from "./services/promotion.service";
 import { LeadersService } from "./services/leaders.service";
+import { LoginComponent } from "./login/login.component";
+import { MatDialogModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { LeadersService } from "./services/leaders.service";
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +47,11 @@ import { LeadersService } from "./services/leaders.service";
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [DishService, PromotionService, LeadersService],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DISHES } from "../shared/dishes";
 import { Dish } from "../shared/dish";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { LoginComponent } from "../login/login.component";
 
 @Component({
   selector: "app-header",
@@ -10,9 +12,13 @@ import { Dish } from "../shared/dish";
 export class HeaderComponent implements OnInit {
   title = "Yukihira";
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+
+  openLoginForm() {
+    this.dialog.open(LoginComponent, { width: "500px", height: "450px" });
+  }
 
   getDish(id: string): Dish {
     return DISHES.filter(dish => dish.id === id)[0];
