@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Dish } from "../shared/dish";
+import { DishService } from "../services/dish.service";
+import { Params, ActivatedRoute, ActivationEnd } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-dishdetail",
@@ -7,11 +10,20 @@ import { Dish } from "../shared/dish";
   styleUrls: ["./dishdetail.component.scss"]
 })
 export class DishdetailComponent implements OnInit {
-  // input() allows you to supply information from one component to another
-  @Input()
   dish: Dish;
 
-  constructor() {}
+  constructor(
+    private dishService: DishService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const id = this.route.snapshot.params["id"];
+    this.dish = this.dishService.getDish(id);
+  }
+
+  goBack(): void {
+    this.location.back;
+  }
 }
