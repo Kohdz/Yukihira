@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
     // this.leaders = this.leaderservices.getLeaders();
 
     // promise
-    this.leaderservices.getLeaders().then(leaders => {
+    this.leaderservices.getLeaders().subscribe(leaders => {
       this.leaders = leaders;
     });
   }

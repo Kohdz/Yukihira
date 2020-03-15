@@ -28,14 +28,14 @@ export class HomeComponent implements OnInit {
     // this.promotion = this.promotionservice.getFeaturedPromotion();
     // this.leader = this.leaderservices.getFeaturedLeader();
 
-    this.dishservice.getFeaturedDish().then(dish => (this.dish = dish));
+    this.dishservice.getFeaturedDish().subscribe(dish => (this.dish = dish));
 
     this.promotionservice
       .getFeaturedPromotion()
-      .then(promotion => (this.promotion = promotion));
+      .subscribe(promotion => (this.promotion = promotion));
 
     this.leaderservices
       .getFeaturedLeader()
-      .then(leader => (this.leader = leader));
+      .subscribe(leader => (this.leader = leader));
   }
 }
