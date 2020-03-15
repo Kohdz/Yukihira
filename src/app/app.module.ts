@@ -31,6 +31,7 @@ import { PromotionService } from "./services/promotion.service";
 import { LeadersService } from "./services/leaders.service";
 import { LoginComponent } from "./login/login.component";
 import { MatDialogModule } from "@angular/material";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { MatDialogModule } from "@angular/material";
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [DishService, PromotionService, LeadersService],
   entryComponents: [LoginComponent],

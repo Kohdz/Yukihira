@@ -9,13 +9,28 @@ export class LeadersService {
   constructor() {}
 
   getLeaders(): Promise<Leader[]> {
-    return Promise.resolve(LEADERS);
-  }
-  getLeader(id: string): Promise<Leader> {
-    return Promise.resolve(LEADERS.filter(leader => leader.id === id))[0];
+    return new Promise(res => {
+      // Simulate server latency with 2 second delay
+      setTimeout(() => res(LEADERS), 2000);
+    });
   }
 
+  getLeader(id: string): Promise<Leader> {
+    return new Promise(res => {
+      // Simulate server latency with 2 second delay
+      setTimeout(
+        () => res(LEADERS.filter(leader => leader.id === id)[0]),
+        2000
+      );
+    });
+  }
   getFeaturedLeader(): Promise<Leader> {
-    return Promise.resolve(LEADERS.filter(promotion => promotion.featured))[0];
+    return new Promise(res => {
+      // Simulate server latency with 2 second delay
+      setTimeout(
+        () => res(LEADERS.filter(promotion => promotion.featured)[0]),
+        2000
+      );
+    });
   }
 }

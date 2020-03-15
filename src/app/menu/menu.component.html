@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="dishes">
     <mat-grid-list cols="4" rowHeight="2:1">
       <!--  (click)="onSelect(dish)" -->
       <mat-grid-tile
@@ -20,4 +20,8 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+</div>
+<div [hidden]="dishes">
+  <mat-spinner></mat-spinner>
+  <h4>Loading . . . Please Wait</h4>
 </div>
