@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div fxFlex *ngIf="dishes">
+  <div fxFlex *ngIf="dishes" [@expand]>
     <mat-grid-list cols="4" rowHeight="2:1">
       <!--  (click)="onSelect(dish)" -->
       <mat-grid-tile
