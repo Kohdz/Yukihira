@@ -4,7 +4,7 @@ import { DishService } from "../services/dish.service";
 import { Params, ActivatedRoute, ActivationEnd } from "@angular/router";
 import { Location } from "@angular/common";
 import { switchMap } from "rxjs/operators";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-dishdetail",
@@ -13,6 +13,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 })
 export class DishdetailComponent implements OnInit {
   dish: Dish;
+  dishcopy: Dish;
   errMess: string;
   dishIds: string[];
   prev: string;
@@ -20,13 +21,14 @@ export class DishdetailComponent implements OnInit {
   @ViewChild("cform", { static: false }) commentFormDirective;
   comment: Comment;
   commentForm: FormGroup;
+  feedbackForm: FormGroup;
 
   formErrors = {
     author: "",
     comment: ""
   };
 
-  validationMessage = {
+  validationMessages = {
     author: {
       required: "Author Name is required",
       minlenght: "Author Name must be at least 2 charactors long"
@@ -45,7 +47,7 @@ export class DishdetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //     // this.createForm();
+    this.createForm();
 
     this.dishservice
       .getDishIds()
@@ -58,24 +60,25 @@ export class DishdetailComponent implements OnInit {
       .subscribe(
         dish => {
           this.dish = dish;
+          this.dishcopy = dish;
           this.setPrevNext(dish.id);
         },
         errMess => (this.errMess = <any>errMess)
       );
-  }
 
-  //     this.route.params
-  //       .pipe(
-  //         switchMap((params: Params) => this.dishservice.getDish(params["id"]))
-  //       )
-  //       .subscribe(
-  //         dish => {
-  //           this.dish = dish;
-  //           this.setPrevNext(dish.id);
-  //         },
-  //         errmess => (this.errMess = <any>errmess)
-  //       );
-  //   }
+    this.route.params
+      .pipe(
+        switchMap((params: Params) => this.dishservice.getDish(params["id"]))
+      )
+      .subscribe(
+        dish => {
+          this.dish = dish;
+          this.dishcopy = dish;
+          this.setPrevNext(dish.id);
+        },
+        errmess => (this.errMess = <any>errmess)
+      );
+  }
 
   setPrevNext(dishId: string) {
     const index = this.dishIds.indexOf(dishId);
@@ -90,17 +93,55 @@ export class DishdetailComponent implements OnInit {
   goBack(): void {
     this.location.back;
   }
-}
+  createForm() {
+    this.commentForm = this.fb.group({
+      author: ["", [Validators.required, Validators.minLength]],
+      rating: 5,
+      comment: ["", Validators.required]
+    });
 
-//     this.route.params
-//       .pipe(
-//         switchMap((params: Params) => this.dishservice.getDish(params["id"]))
-//       )
-//       .subscribe(
-//         dish => {
-//           this.dish = dish;
-//           this.setPrevNext(dish.id);
-//         },
-//         errmess => (this.errMess = <any>errmess)
-//       );
-//   }
+    this.commentForm.valueChanges.subscribe(data => this.onValueChanged(data));
+
+    this.onValueChanged();
+  }
+
+  onSubmit() {
+    // this.comment = this.commentForm.value;
+    // this.comment.date = new Date().toISOString();
+    // console.log(this.comment);
+    // this.dishcopy.comments.push(this.comment);
+    this.dishservice.putDish(this.dishcopy).subscribe(
+      dish => {
+        this.dish = dish;
+        this.dishcopy = dish;
+      },
+      errmess => {
+        this.dish = null;
+        this.dishcopy = null;
+        this.errMess = <any>errmess;
+      }
+    );
+  }
+
+  onValueChanged(data?: any) {
+    if (!this.feedbackForm) {
+      return;
+    }
+    const form = this.feedbackForm;
+    for (const field in this.formErrors) {
+      if (this.formErrors.hasOwnProperty(field)) {
+        // clear previous error message (if any)
+        this.formErrors[field] = "";
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.validationMessages[field];
+          for (const key in control.errors) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.formErrors[field] += messages[key] + " ";
+            }
+          }
+        }
+      }
+    }
+  }
+}
