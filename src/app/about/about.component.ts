@@ -1,11 +1,17 @@
 import { Component, OnInit } from "@angular/core";
 import { Leader } from "../shared/leader";
 import { LeadersService } from "../services/leaders.service";
+import { flyInOut } from "../animations/app.animations";
 
 @Component({
   selector: "app-about",
   templateUrl: "./about.component.html",
-  styleUrls: ["./about.component.scss"]
+  styleUrls: ["./about.component.scss"],
+  host: {
+    "[@flyInOut]": "true",
+    style: "display: block"
+  },
+  animations: [flyInOut()]
 })
 export class AboutComponent implements OnInit {
   leaders: Leader[];
