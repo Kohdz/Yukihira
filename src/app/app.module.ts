@@ -30,12 +30,12 @@ import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { PromotionService } from "./services/promotion.service";
 import { LeadersService } from "./services/leaders.service";
 import { LoginComponent } from "./login/login.component";
-import { MatDialogModule } from "@angular/material";
+import { MatDialogModule, MatSliderModule } from "@angular/material";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { baseURL } from "./shared/baseurl";
 import { HttpClientModule } from "@angular/common/http";
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
-import { HighlightDirective } from './directives/highlight.directive';
+import { HighlightDirective } from "./directives/highlight.directive";
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { HighlightDirective } from './directives/highlight.directive';
   ],
   imports: [
     BrowserModule,
-
+    MatSliderModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
