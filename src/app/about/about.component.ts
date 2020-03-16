@@ -12,25 +12,8 @@ export class AboutComponent implements OnInit {
   constructor(private leaderservices: LeadersService) {}
 
   ngOnInit() {
-    // non-pomise
-    // this.leaders = this.leaderservices.getLeaders();
-
-    // promise
     this.leaderservices.getLeaders().subscribe(leaders => {
       this.leaders = leaders;
     });
   }
 }
-
-// dish: Dish;
-
-// constructor(
-//   private dishService: DishService,
-//   private route: ActivatedRoute,
-//   private location: Location
-// ) {}
-
-// ngOnInit() {
-//   const id = this.route.snapshot.params["id"];
-//   this.dish = this.dishService.getDish(id);
-// }
