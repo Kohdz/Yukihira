@@ -22,13 +22,13 @@
       <p>{{ dish.description }}</p>
     </mat-card-content>
   </mat-card>
-  <div fxFlex [hidden]="dish || dishErrMess">
+  <div fxFlex [hidden]="dish || disErrMess">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
-  <div fxFlex *ngIf="dishErrMess">
+  <div fxFlex *ngIf="disErrMess">
     <h2>Error</h2>
-    <h4>{{ dishErrMess }}</h4>
+    <h4>{{ disErrMess }}</h4>
   </div>
   <mat-card *ngIf="promotion" fxFlex [@expand]>
     <mat-card-header>
