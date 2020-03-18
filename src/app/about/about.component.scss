@@ -1,0 +1,39 @@
+.aboutHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.historyTitle {
+  display: flex;
+  justify-content: center;
+}
+.historyText {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.factsItems {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+// .mat-list-item {
+//   height: 60px
+// }
+
+#ListHeight {
+  height: 85px;
+}
+
+#divHeight {
+  margin-bottom: 420px;
+}
+
+.leaderName {
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.leaderDesignation {
+  width: 550px;
+}

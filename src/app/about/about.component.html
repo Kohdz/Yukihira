@@ -1,7 +1,7 @@
 <div class="container" fxLayout="column" fxLayoutGap="10px">
   <div fxFlex>
     <div>
-      <h3>About Us</h3>
+      <h1 class="aboutHeader">About Us</h1>
       <hr />
     </div>
   </div>
@@ -9,20 +9,16 @@
   <div fxFlex>
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="70">
-        <h2>Our History</h2>
-        <p>
-          Started in 2010, Resturant Yukihira quickly established itself as a
-          culinary icon par excellence in Hong Kong. With its unique brand of
-          world fusion cuisine that can be found nowhere else, it enjoys
-          patronage from the A-list clientele in Hong Kong. Featuring four of
-          the best three-star Michelin chefs in the world, you never know what
-          will arrive on your plate the next time you visit us.
-        </p>
-        <p>
-          The restaurant traces its humble beginnings to
-          <em>The Frying Pan</em>, a successful chain started by our CEO, Mr.
-          Peter Pan, that featured for the first time the world's best cuisines
-          in a pan.
+        <h2 class="historyTitle">Our History</h2>
+        <p class="historyText">
+          It started in 2004. When founder, Sukiyabashi Jiro got board of
+          retirement and wanted to live his life long dream of being a chef.
+          Although not traditionally trained at any school as other chefs, Jiro
+          has been cooking since childhood. He Opened the resturant with modest
+          intents, but to his suprise, Yukihira became a local Phenomena due its
+          unique mix of Japanese, Russian and French cusine. With its sucess,
+          Jiro is looking to expand to more location isn Japan. So stay on the
+          look out!
         </p>
       </div>
       <div fxFlex="30">
@@ -34,14 +30,14 @@
           </mat-card-header>
           <mat-card-content>
             <dl>
-              <dt>Started</dt>
-              <dd>3 Feb. 2013</dd>
-              <dt>Major Stake Holder</dt>
-              <dd>HK Fine Foods Inc.</dd>
-              <dt>Last Year's Turnover</dt>
-              <dd>$1,250,375</dd>
-              <dt>Employees</dt>
-              <dd>40</dd>
+              <dt class="factsItems">Started</dt>
+              <dd>1 Jan. 2004</dd>
+              <dt class="factsItems">Major Stake Holder</dt>
+              <dd>Soft Bank.</dd>
+              <dt class="factsItems">Last Year's Turnover</dt>
+              <dd>¥56,361,126.42</dd>
+              <dt class="factsItems">Employees</dt>
+              <dd>35</dd>
             </dl>
           </mat-card-content>
         </mat-card>
@@ -66,15 +62,31 @@
       </blockquote>
     </mat-card>
   </div>
-
+  <!-- 
   <div fxFlex>
     <h2>Corporate Leadership</h2>
     <mat-list *ngIf="leaders" [@expand]>
       <mat-list-item *ngFor="let leader of leaders">
-        <img mat-list-avatar src="/images/yuko.png" width="5%" />
-        <h4>{{ leader.name }} {{ leader.abbr }}</h4>
-        <p>{{ leader.designation }}</p>
+        <img mat-list-avatar src="{{ leader.image }}" width="5%" />
+        <h4 class="leaderName">{{ leader.name }} {{ leader.abbr }}</h4>
+        <p class="leaderDesignation">{{ leader.designation }}</p>
         <p>{{ leader.description }}</p>
+      </mat-list-item>
+    </mat-list>
+    <div fxFlex [hidden]="leaders">
+      <mat-spinner></mat-spinner>
+      <h4>Loading ... Please Wait!</h4>
+    </div>
+  </div> -->
+
+  <div fxFlex id="divHeight">
+    <h2>Corporate Leadership</h2>
+    <mat-list id="ListHeight" *ngIf="leaders" [@expand]>
+      <mat-list-item id="ListHeight" *ngFor="let leader of leaders">
+        <img mat-list-avatar src="{{ leader.image }}" width="5%" />
+        <h4 class="leaderName">{{ leader.name }} {{ leader.abbr }}</h4>
+        <p class="leaderDesignation">{{ leader.designation }}</p>
+        <div>{{ leader.description }}</div>
       </mat-list-item>
     </mat-list>
     <div fxFlex [hidden]="leaders">
