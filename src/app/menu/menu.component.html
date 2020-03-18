@@ -24,11 +24,12 @@
     </mat-grid-list>
   </div>
 </div>
-<div
-  [hidden]="dishes || errMess"
-  style="display: flex; justify-content: center;"
->
-  <mat-spinner class="orange-spinner"></mat-spinner>
+<div [hidden]="dishes || errMess">
+  <mat-spinner
+    style="margin: 0 auto;"
+    class="orange-spinner"
+    id="matspinner"
+  ></mat-spinner>
   <h4>Loading . . . Please Wait</h4>
 </div>
 
