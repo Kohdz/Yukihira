@@ -1,8 +1,8 @@
 $lt-gray: #ddd;
-$background-dark: #512da8;
-$background-light: rgb(255, 102, 0);
-$background-pale: #d1c4e9;
-$background-moredark: #4527a0;
+$background-dark: #8b4000;
+$background-light: #ef7215;
+$background-pale: #ff7417;
+$background-moredark: #f05e23;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
   margin: 0px auto;
@@ -13,11 +13,14 @@ $background-moredark: #4527a0;
   @include zero-margin(70px, 30px);
   background: $background-light;
   color: floralwhite;
-  min-height: 150px;
+  min-height: 100%;
+  max-height: 500px;
+  flex-direction: inherit;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .container {
-  margin: 20px;
   display: flex;
 }
 
@@ -30,4 +33,29 @@ $background-moredark: #4527a0;
 
 .active {
   background: $background-moredark;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+#videoDiv {
+  position: relative;
+
+  // object-fit: cover;
+  // overflow: hidden;
+}
+
+#video {
+  // height: 500px;
+  object-fit: cover;
+  overflow: hidden;
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  // width: auto;
+  // height: 50%;
+  height: 40vw;
 }

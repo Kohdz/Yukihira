@@ -6,21 +6,22 @@
   fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px"
 >
-  <mat-card *ngIf="dish" fxFlex [@expand]>
+  <mat-card class="example-card" *ngIf="dish" fxFlex [@expand]>
     <mat-card-header>
-      <div mat-card-avatar></div>
-      <mat-card-title>
-        <h3>{{ dish.name | uppercase }}</h3>
-      </mat-card-title>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Dish: {{ dish.name }}</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
     </mat-card-header>
-    <img
-      mat-card-image
-      src="{{ BaseURL + dish.image }}"
-      alt="{{ dish.name }}"
-    />
+    <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
     <mat-card-content>
-      <p>{{ dish.description }}</p>
+      <p>
+        {{ dish.description }}
+      </p>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
   </mat-card>
   <div fxFlex [hidden]="dish || disErrMess">
     <mat-spinner></mat-spinner>
@@ -30,12 +31,12 @@
     <h2>Error</h2>
     <h4>{{ disErrMess }}</h4>
   </div>
-  <mat-card *ngIf="promotion" fxFlex [@expand]>
+
+  <mat-card class="example-card" *ngIf="promotion" fxFlex [@expand]>
     <mat-card-header>
-      <div mat-card-avatar></div>
-      <mat-card-title>
-        <h3>{{ promotion.name | uppercase }}</h3>
-      </mat-card-title>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Promotional Item: {{ promotion.name }}</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
     </mat-card-header>
     <img
       mat-card-image
@@ -43,28 +44,47 @@
       alt="{{ promotion.name }}"
     />
     <mat-card-content>
-      <p>{{ promotion.description }}</p>
+      <p>
+        {{ promotion.description }}
+      </p>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
   </mat-card>
-  <div fxFlex [hidden]="promotion">
+  <div fxFlex [hidden]="promotion || disErrMess">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
+  <div fxFlex *ngIf="disErrMess">
+    <h2>Error</h2>
+    <h4>{{ disErrMess }}</h4>
+  </div>
 
-  <mat-card *ngIf="leader" fxFlex [@expand]>
+  <mat-card class="example-card" *ngIf="leader" fxFlex [@expand]>
     <mat-card-header>
-      <div mat-card-avatar></div>
-      <mat-card-title>
-        <h3>{{ leader.name | uppercase }}</h3>
-      </mat-card-title>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Star Leader: {{ leader.name }}</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="{{ leader.image }}" alt="{{ leader.name }}" />
     <mat-card-content>
-      <p>{{ leader.description }}</p>
+      <p>
+        {{ leader.description }}
+      </p>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
   </mat-card>
-  <div fxFlex [hidden]="leader">
+  <div fxFlex [hidden]="leader || disErrMess">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
+  </div>
+  <div fxFlex *ngIf="disErrMess">
+    <h2>Error</h2>
+    <h4>{{ disErrMess }}</h4>
   </div>
 </div>
