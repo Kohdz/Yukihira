@@ -13,8 +13,6 @@ Yukihira is a single-pageweb application for an imaginary restaurant named Yukih
    - [Menu](#menu)
    - [Dish Detail and Commenting](#dish-detail-and-commenting)
    - [Responsive Design](#responsive-design)
-   - [](#)
-   - [](#)
 3. [Testing](#testing)
    - [Running Unit Tests](#running-unit-tests)
    - [Running End-To-End Tests](#running-end-to-end-tests)
@@ -76,4 +74,13 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+# Future Implementation
+
+1. Add a backend server
+   - add user regiatration
+   - add MongoDB database
+2. Better Dish Infomation
+   - add nutrition info
+   - better catagorize dishes such as vegetarian/meat
+   - add more dishes
+3. Add ordering functionality
