@@ -19,12 +19,11 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button>More</button>
     </mat-card-actions>
   </mat-card>
   <div fxFlex [hidden]="dish || disErrMess">
-    <mat-spinner></mat-spinner>
+    <mat-spinner class="orange-spinner"></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
   <div fxFlex *ngIf="disErrMess">
@@ -49,12 +48,11 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button>More</button>
     </mat-card-actions>
   </mat-card>
   <div fxFlex [hidden]="promotion || disErrMess">
-    <mat-spinner></mat-spinner>
+    <mat-spinner class="orange-spinner"></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
   <div fxFlex *ngIf="disErrMess">
@@ -76,13 +74,10 @@
         {{ leader.description }}
       </p>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+    <mat-card-actions> </mat-card-actions>
   </mat-card>
   <div fxFlex [hidden]="promotion || disErrMess">
-    <mat-spinner></mat-spinner>
+    <mat-spinner class="orange-spinner"></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
   <div fxFlex *ngIf="disErrMess">
