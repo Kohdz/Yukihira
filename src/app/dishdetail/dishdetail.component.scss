@@ -5,7 +5,7 @@
 }
 
 .example-card {
-  max-width: 520px;
+  // max-width: 520px;
   background: rgb(212, 212, 212);
 }
 
@@ -24,9 +24,18 @@
 
 .comments {
   margin-left: 40px;
-  max-width: 500px;
 }
 
 p {
   margin: 0;
+}
+
+#dishDetial {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-left: 13px;
+}
+
+#CommentBox {
+  max-width: 100%;
 }
