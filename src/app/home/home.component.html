@@ -9,8 +9,8 @@
   <mat-card class="example-card" *ngIf="dish" fxFlex [@expand]>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Dish: {{ dish.name }}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>{{ dish.name }}</mat-card-title>
+      <mat-card-subtitle>New Dish</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
     <mat-card-content>
@@ -35,8 +35,8 @@
   <mat-card class="example-card" *ngIf="promotion" fxFlex [@expand]>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Promotional Item: {{ promotion.name }}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>{{ promotion.name }}</mat-card-title>
+      <mat-card-subtitle>Promotional Item</mat-card-subtitle>
     </mat-card-header>
     <img
       mat-card-image
@@ -65,10 +65,12 @@
   <mat-card class="example-card" *ngIf="leader" fxFlex [@expand]>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Star Leader: {{ leader.name }}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>{{ leader.name }}</mat-card-title>
+      <mat-card-subtitle>Star Chef</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{ leader.image }}" alt="{{ leader.name }}" />
+    <div id="imgDiv">
+      <img mat-card-image src="{{ leader.image }}" alt="{{ leader.name }}" />
+    </div>
     <mat-card-content>
       <p>
         {{ leader.description }}
@@ -79,7 +81,7 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
-  <div fxFlex [hidden]="leader || disErrMess">
+  <div fxFlex [hidden]="promotion || disErrMess">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
